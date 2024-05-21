@@ -25,7 +25,14 @@ const manifest = Object.assign(
     name: '__MSG_extensionName__',
     version: packageJson.version,
     description: '__MSG_extensionDescription__',
-    permissions: ['storage'].concat(sidePanelConfig.permissions),
+    permissions: ['identity', 'storage'].concat(sidePanelConfig.permissions),
+	"oauth2": {
+		"client_id": "71195438593-76djr499libetn4c2qi5gh5hcbfdipic.apps.googleusercontent.com",
+		"scopes": [
+		  "https://www.googleapis.com/auth/contacts",
+		  "https://www.googleapis.com/auth/contacts.readonly"
+		]
+	  },
     options_page: 'options/index.html',
     background: {
       service_worker: 'background.iife.js',
